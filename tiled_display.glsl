@@ -1,4 +1,4 @@
-#version 460
+#version 440
 
 uniform vec3      iResolution;     // viewport resolution (in pixels)
 uniform float     iTime;     // shader playback time (in seconds)

@@ -4,7 +4,7 @@
 	
   <window name="win3d01" title="Tiled Display" 
           width="800" height="600" 
-          gl_version_major="4" gl_version_minor="6"
+          gl_version_major="4" gl_version_minor="4"
           build_opengl_extensions_list="0" />
 
 
