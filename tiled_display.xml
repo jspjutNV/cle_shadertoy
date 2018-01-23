@@ -40,6 +40,10 @@ gpu_prog_01 = gh_node.getid("gpu_program")
 
 local abs_path=0
 tex01 = gh_texture.create_from_file("data/tarte_fruits.jpg", 3, abs_path)
+vid02 = gh_av.decoder_open("data/FORM.MPG", 1)
+tex02 = gh_texture.create_from_file("data/tarte_fruits.jpg", 3, abs_path)
+tex03 = gh_texture.create_from_file("data/tarte_fruits.jpg", 3, abs_path)
+tex04 = gh_texture.create_from_file("data/tarte_fruits.jpg", 3, abs_path)
 
 mesh_quad = gh_mesh.create_quad(winW, winH)
 --gh_object.use_gl2_vertex_array(mesh_quad, 1) -- *** Old OpenGL... ***
@@ -67,8 +71,14 @@ gh_gpu_program.uniform3f(gpu_prog_01, "iResolution", winW, winH, 0)
 mouse_x, mouse_y = gh_input.mouse_getpos() 
 gh_gpu_program.uniform4f(gpu_prog_01, "iMouse", mouse_x, winH-mouse_y, 0, 0)
 gh_gpu_program.uniform1i(gpu_prog_01, "iChannel0", 0);
+gh_gpu_program.uniform1i(gpu_prog_01, "iChannel1", 1);
+gh_gpu_program.uniform1i(gpu_prog_01, "iChannel2", 2);
+gh_gpu_program.uniform1i(gpu_prog_01, "iChannel3", 3);
 
 gh_texture.bind(tex01, 0)
+gh_texture.bind(tex02, 1)
+gh_texture.bind(tex03, 2)
+gh_texture.bind(tex04, 3)
 gh_object.render(mesh_quad)
 
 -- TODO: remove text

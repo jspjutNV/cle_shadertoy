@@ -4,6 +4,9 @@ uniform vec3      iResolution;     // viewport resolution (in pixels)
 uniform float     iTime;     // shader playback time (in seconds)
 uniform vec4      iMouse;          // mouse pixel coords. xy: current (if MLB down), zw: click
 uniform sampler2D iChannel0;
+uniform sampler2D iChannel1;
+uniform sampler2D iChannel2;
+uniform sampler2D iChannel3;
 
 in vec2 fragCoord;
 out vec4 fragColor;
@@ -37,8 +40,8 @@ void main()
     float g = texture(iChannel0, vec2(uv.x/3.0, uv.y)).r;
     float b = texture(iChannel0, vec2(1.0/3.0 + uv.x/3.0, uv.y)).r;
     float r = texture(iChannel0, vec2(2.0/3.0 + uv.x/3.0, uv.y)).r;
-
     
+
 //    float r = texture(iChannel0, vec2(uv.x, uv.y)).g;
   //  float g = texture(iChannel1, vec2(uv.x, uv.y)).g;
     //float b = texture(iChannel2, vec2(uv.x, uv.y)).g;

@@ -4,12 +4,15 @@ This project uses [GeeXLab](http://www.geeks3d.com/geexlab/downloads/).
 GeeXLab is available for Windows, MacOS, Linux, and Raspberry Pi.
 Please download it and make the following changes to run this project.
 
-First you need to update the path to the `GeeXLab.exe` executable in `start_shadertoy.bat`.
+First you need to create a `start_shadertoy.bat` script (or equivalent for other OS) and set the path to the `GeeXLab.exe` executable.
 For example, it could be the following:
 
 ```
 start C:\GeeXLab_FREE_win64\GeeXLab.exe /log_framerate /no_menubar /glinfo /demofile="tiled_display.xml"
 ```
+
+The commands to load an image are in `tiled_display.xml`.
+The majority of the code inside block in the xml file is lua. Comments in lua begin with `--`.
 
 
 ## Notes
